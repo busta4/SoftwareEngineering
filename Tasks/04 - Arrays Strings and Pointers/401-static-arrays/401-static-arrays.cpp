@@ -18,13 +18,13 @@ int main()
     cout << "The start address of the array nums is " << nums << " (hex)" << endl;
 
     //Write out all elements of the array
-    for (unsigned int n = 0; n < N; n++) {
+    for (int n = 0; n < N; n++) {
         int next = nums[n];                                             //Read by de-referencing
         cout << "Element " << n << " of nums = " << next << endl;       //Write to terminal
     }
 
     //Modify each element of the array
-    for (unsigned int n = 0; n < N; n++) {
+    for (int n = 0; n < N; n++) {
         int newValue = nums[n] + 1;             //Read (by de-referencing) and add one    
         nums[n] = newValue;                     //Write into the array (again, using de-referencing)
     }
@@ -32,7 +32,7 @@ int main()
     cout << "Add one...." << endl;
 
     //Write out all elements of the array again - shorter version this time
-    for (unsigned int n = 0; n < N; n++) {
+    for (int n = 0; n < N; n++) {
         cout << "Element " << n << " of nums = " << nums[n] << endl;
     }
 
@@ -44,8 +44,11 @@ int main()
 
     //Write task 1 solution here
     int64_t sum = 0L;   //Result needs to be bigger than int to avoid overflow
-
-
+    for (int n = 0; n < N; n++)
+    {
+        sum += nums[n];
+        cout << "Added " << nums[n] << " to total, new total: " << sum << endl;
+    }
     // ***********************************************************************************************************************
     // TASK 2 - calculate the mean of all elements (this will be a fractional value) and display to 1 decimal place accuracy *
     // ***********************************************************************************************************************
