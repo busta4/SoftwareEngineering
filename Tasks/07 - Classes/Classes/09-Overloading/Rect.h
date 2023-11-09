@@ -85,6 +85,15 @@ namespace COMP1000 {
             }
         }
 
+        void updateArea(int w, int h) {
+            //Recalculate
+            area = width * height;
+            //Log IF the file has been opened
+            if (outputStream.is_open()) {
+                outputStream << "width: " << width << ", height: " << height << ", area: " << area << endl;
+            }
+        }
+
         // Output to terminal
         void display() {
             cout << fileName << ", Width: " << width << ", Height: " << height << ", Area: " << area << endl;
